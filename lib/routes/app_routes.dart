@@ -1,5 +1,5 @@
 import 'package:contador/features/feature_modelo/presentation/screens/listar/listar_contadores_screen.dart';
-import 'package:contador/features/home/home.dart';
+import 'package:contador/features/home/home_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -8,11 +8,19 @@ import 'app_routes_names.dart';
 
 class AppRoutes {
   static final List<RouteBase> routes = [
-    GoRoute(path: AppRoutesNames.home, builder: (context, state) => Home()),
+    GoRoute(
+      path: '${AppRoutesNames.home}/:contadorId',
+      builder: (context, state) {
+        final contadorId = state.pathParameters['contadorId']!;
+        return HomeScreen(contadorId: contadorId);
+      },
+    ),
 
-        // Produto
-        GoRoute(path: AppRoutesNames.adicionarContador,
-        builder: (context, state) => AdicionarContadorScreen()),
+    // Produto
+    GoRoute(
+      path: AppRoutesNames.adicionarContador,
+      builder: (context, state) => AdicionarContadorScreen(),
+    ),
 
     GoRoute(
       path: AppRoutesNames.listaContadors,
@@ -29,13 +37,6 @@ class AppRoutes {
     //   builder: (context, state) => AdicionarProdutoScreen(),
     // ),
 
-    // GoRoute(
-    //   path: '${AppRoutesNames.editarProduto}/:produtoId',
-    //   builder: (context, state) {
-    //     final produtoId = state.pathParameters['produtoId']!;
-    //     return EditarProdutoScreen(produtoId: produtoId);
-    //   },
-    // ),
 
     // GoRoute(
     //   path: '${AppRoutesNames.detalhesProduto}/:produtoId',
@@ -44,7 +45,6 @@ class AppRoutes {
     //     return DetalhesProdutoScreen(produtoId: produtoId);
     //   },
     // ),
-
 
     // GoRoute(
     //   path: '${AppRoutesNames.configuracoes}/:contadorId',
@@ -91,5 +91,5 @@ class AppRoutes {
 
 // Provider
 final appRoutesProvider = Provider<GoRouter>((ref) {
-  return GoRouter(initialLocation: AppRoutesNames.home, routes: AppRoutes.routes);
+  return GoRouter(initialLocation: AppRoutesNames.listaContadors, routes: AppRoutes.routes);
 });

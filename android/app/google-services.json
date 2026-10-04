@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1083869217827",
+    "project_id": "contador-web-705f7",
+    "storage_bucket": "contador-web-705f7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1083869217827:android:254bde14f045e4f8efdd96",
+        "android_client_info": {
+          "package_name": "com.santos.valdomiro.contador"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXqUmWQVq7Ue7WTxgt1zSnUgL0D9PHpdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

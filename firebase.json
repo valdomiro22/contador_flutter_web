@@ -1,0 +1,39 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "contador-web-705f7",
+          "appId": "1:1083869217827:android:254bde14f045e4f8efdd96",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "contador-web-705f7",
+          "configurations": {
+            "android": "1:1083869217827:android:254bde14f045e4f8efdd96",
+            "ios": "1:1083869217827:ios:0ff36d799c374589efdd96",
+            "macos": "1:1083869217827:ios:0ff36d799c374589efdd96",
+            "web": "1:1083869217827:web:812d8e682c6945bcefdd96",
+            "windows": "1:1083869217827:web:847c32ec8c9882ceefdd96"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

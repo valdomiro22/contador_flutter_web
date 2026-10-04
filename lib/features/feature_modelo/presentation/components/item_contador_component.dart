@@ -19,48 +19,51 @@ class ItemContadorComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: AppColors.primaryContainerLight,
-      child: Container(
-        padding: EdgeInsets.all(10),
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-              child: Text(
-                contador.nome,
-                style: TextStyle(color: AppColors.onPrimaryContainerLight),
+    return GestureDetector(
+      onTap: onCardClick,
+      child: Card(
+        color: AppColors.primaryContainerLight,
+        child: Container(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                child: Text(
+                  contador.nome,
+                  style: TextStyle(color: AppColors.onPrimaryContainerLight),
+                ),
               ),
-            ),
 
-            Divider(color: AppColors.surfaceVariantLight),
+              Divider(color: AppColors.surfaceVariantLight),
 
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Valor Atual', style: TextStyle(color: AppColors.surfaceVariantLight)),
-                      Text(
-                        contador.valorAtual.toString(),
-                        style: TextStyle(color: AppColors.yellowProject),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text('Méta', style: TextStyle(color: AppColors.surfaceVariantLight)),
-                      valorMeta(contador.meta),
-                    ],
-                  ),
-                ],
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Valor Atual', style: TextStyle(color: AppColors.surfaceVariantLight)),
+                        Text(
+                          contador.valorAtual.toString(),
+                          style: TextStyle(color: AppColors.yellowProject),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text('Méta', style: TextStyle(color: AppColors.surfaceVariantLight)),
+                        valorMeta(contador.meta),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

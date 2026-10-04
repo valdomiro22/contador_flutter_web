@@ -2,8 +2,10 @@ import 'package:contador/features/feature_modelo/presentation/components/item_co
 import 'package:contador/features/feature_modelo/presentation/screens/listar/listar_contadores_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../common/components/empty_list_component.dart';
+import '../../../../../routes/app_routes_names.dart';
 
 class ListarContadoresScreen extends ConsumerWidget {
   const ListarContadoresScreen({super.key});
@@ -55,19 +57,17 @@ class ListarContadoresScreen extends ConsumerWidget {
                   );
                 },
                 onCardClick: () {
-                  // context.push('${AppRoutesNames.listaEntregasPorCliente}/${contador.id}');
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Clicado'),
-                      duration: Duration(seconds: 2),
-                      behavior: SnackBarBehavior.floating,
-                    ),
-                  );
+                  context.push('${AppRoutesNames.home}');
+                  // context.push('${AppRoutesNames.home}/${contador.id}');
                 },
               );
             },
           );
         },
+      ),
+      floatingActionButton: FloatingActionButton.large(
+        onPressed: () => context.push(AppRoutesNames.adicionarContador),
+        child: Icon(Icons.add),
       ),
     );
   }
